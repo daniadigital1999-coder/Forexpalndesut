@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESUT FOREX | Ceklis Trading Swing</title>
+    <style>
+        * {margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+        body {
+            min-height:100vh;
+            background:radial-gradient(circle, #0b1a2f, #000);
+            background-image:linear-gradient(rgba(0, 70, 255, 0.07) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 70, 255, 0.07) 1px, transparent 1px);
+            background-size:25px 25px;
+            padding:20px;
+            color:#e0f7ff;
+        }
+        .wadah {max-width:580px;margin:0 auto;}
+        .atas {
+            text-align:center;
+            padding:20px;
+            margin-bottom:25px;
+            border:2px solid #0099ff;
+            border-radius:15px;
+            background:rgba(0, 40, 90, 0.65);
+            box-shadow:0 0 22px rgba(0, 153, 255, 0.35);
+        }
+        h1 {color:#00ccff;font-size:27px;margin-bottom:8px;text-transform:uppercase;letter-spacing:2px;}
+        .nama-situs {color:#ffaa00;font-size:19px;font-weight:bold;margin-bottom:8px;}
+        .tanggal {color:#80d8ff;font-size:14px;}
+        .kotak {
+            background:rgba(0, 35, 80, 0.75);
+            border-radius:12px;
+            padding:22px;
+            margin-bottom:22px;
+            border:1px solid #0077cc;
+            box-shadow:0 0 16px rgba(0, 153, 255, 0.2);
+        }
+        .judul {
+            color:#00ccff;
+            font-size:18px;
+            font-weight:bold;
+            margin-bottom:16px;
+            display:flex;
+            align-items:center;
+            gap:8px;
+        }
+        .item {
+            display:flex;
+            align-items:center;
+            gap:10px;
+            padding:11px;
+            margin-bottom:9px;
+            border-radius:8px;
+            background:rgba(0, 120, 255, 0.09);
+            cursor:pointer;
+            transition:all 0.2s;
+        }
+        .item:hover {background:rgba(0, 150, 255, 0.18);}
+        input[type="checkbox"] {width:21px;height:21px;accent-color:#00ff99;cursor:pointer;}
+        .teks {color:#c8eeff;font-size:15px;}
+        input:checked ~ .teks {color:#00ff99;font-weight:bold;}
+        .masuk {
+            width:100%;
+            padding:13px;
+            margin-bottom:13px;
+            border-radius:8px;
+            border:1px solid #0077cc;
+            background:rgba(0, 20, 60, 0.85);
+            color:white;
+            font-size:15px;
+        }
+        textarea {height:85px;resize:none;}
+        .baris-tombol {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;}
+        .tombol {
+            padding:13px;
+            border:none;
+            border-radius:8px;
+            font-weight:bold;
+            font-size:15px;
+            cursor:pointer;
+            transition:all 0.2s;
+        }
+        .tombol-hijau {background:#00aa66;color:#000;box-shadow:0 0 16px rgba(0, 255, 153, 0.4);}
+        .tombol-merah {background:#ff4444;color:#000;box-shadow:0 0 16px rgba(255, 68, 68, 0.4);}
+        .tombol-biru {background:#0088ff;color:#000;box-shadow:0 0 16px rgba(0, 136, 255, 0.4);}
+        .riwayat {
+            background:rgba(0, 45, 100, 0.75);
+            border-radius:8px;
+            padding:16px;
+            margin-bottom:11px;
+            border:1px solid #0077cc;
+        }
+        .tgl-riwayat {color:#00ccff;font-weight:bold;margin-bottom:6px;}
+        .teks-riwayat {color:#c8eeff;font-size:14px;line-height:1.5;}
+        .kosong {text-align:center;color:#80bbff;padding:22px;}
+        footer {text-align:center;margin-top:32px;color:#60b8ff;font-size:13px;}
+    </style>
+</head>
+<body>
+    <div class="wadah">
+        <div class="atas">
+            <div class="nama-situs">📈 DESUT FOREX</div>
+            <h1>CEKLIS TRADING SWING</h1>
+            <div class="tanggal" id="tanggal"></div>
+        </div>
+
+        <div class="kotak">
+            <div class="judul">📊 ANALISIS PASAR</div>
+            <label class="item"><input type="checkbox"><span class="teks">Cek Tren Utama (Mingguan/Harian)</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Tentukan Area Dukungan & Perlawanan</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Cek Kondisi Indikator (RSI/MACD)</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Perhatikan Berita Ekonomi Penting</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Konfirmasi Pola Harga Terbentuk</span></label>
+        </div>
+
+        <div class="kotak">
+            <div class="judul">🎯 PERENCANAAN POSISI</div>
+            <label class="item"><input type="checkbox"><span class="teks">Tentukan Titik Masuk yang Tepat</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Tetapkan Target Keuntungan (TP)</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Pasang Batas Kerugian (SL) Jelas</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Pastikan Rasio Risiko:Imbalan ≥ 1:2</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Hitung Besar Lot Sesuai Modal</span></label>
+        </div>
+
+        <div class="kotak">
+            <div class="judul">🛡️ MANAJEMEN RISIKO</div>
+            <label class="item"><input type="checkbox"><span class="teks">Tidak Menggunakan Modal Pinjaman</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Risiko per Transaksi ≤ 2% Modal</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Tidak Melakukan Penggandaan Posisi</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Siap Menahan Posisi Beberapa Hari/Minggu</span></label>
+            <label class="item"><input type="checkbox"><span class="teks">Tetap Tenang, Tidak Terbawa Emosi</span></label>
+        </div>
+
+        <div class="kotak">
+            <div class="judul">📝 CATATAN TRANSAKSI</div>
+            <input type="text" id="pasangan" class="masuk" placeholder="💱 Pasangan Mata Uang (Contoh: EUR/USD)">
+            <input type="text" id="arah" class="masuk" placeholder="↗️ Arah: Beli / Jual">
+            <input type="text" id="hasil" class="masuk" placeholder="💰 Hasil: Untung / Rugi & Nominal">
+            <textarea id="pelajaran" class="masuk" placeholder="📚 Pelajaran yang Didapat..."></textarea>
+            <div class="baris-tombol">
+                <button class="tombol tombol-hijau" onclick="simpanTransaksi()">💾 SIMPAN CATATAN</button>
+                <button class="tombol tombol-biru" onclick="bagikanLaporan()">📲 BAGIKAN LAPORAN</button>
+            </div>
+        </div>
+
+        <div class="kotak">
+            <div class="judul">📜 RIWAYAT TRANSAKSI SWING</div>
+            <div id="daftarRiwayatForex" class="kosong">Belum ada catatan transaksi</div>
+            <button class="tombol tombol-merah" style="width:100%;margin-top:16px;" onclick="hapusSemuaCatatan()">🗑️ HAPUS SEMUA RIWAYAT</button>
+        </div>
+
+        <footer>📈 DESUT FOREX | Tetap Disiplin, Sukses Menanti! 🚀💹</footer>
+    </div>
+
+    <script>
+        const hariIni = new Date();
+        const formatTgl = hariIni.toLocaleDateString('id-ID', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+        document.getElementById('tanggal').textContent = formatTgl;
+        const tglSimpan = hariIni.toLocaleDateString('id-ID');
+
+        function simpanTransaksi() {
+            const dataForex = {
+                tanggal: tglSimpan,
+                pasangan: document.getElementById('pasangan').value || '-',
+                arah: document.getElementById('arah').value || '-',
+                hasil: document.getElementById('hasil').value || '-',
+                pelajaran: document.getElementById('pelajaran').value || 'Tidak ada catatan khusus'
+            };
+            let riwayatForex = JSON.parse(localStorage.getItem('riwayatForexSwing')) || [];
+            let indeksAda = riwayatForex.findIndex(item => item.tanggal === tglSimpan);
+            indeksAda !== -1 ? riwayatForex[indeksAda] = dataForex : riwayatForex.unshift(dataForex);
+            localStorage.setItem('riwayatForexSwing', JSON.stringify(riwayatForex));
+            tampilkanRiwayatForex();
+            alert('✅ Catatan Transaksi Swing Berhasil Disimpan!');
+            // Kosongkan kolom setelah simpan
+            document.getElementById('pasangan').value = '';
+            document.getElementById('arah').value = '';
+            document.getElementById('hasil').value = '';
+            document.getElementById('pelajaran').value = '';
+        }
+
+        function tampilkanRiwayatForex() {
+            const riwayatForex = JSON.parse(localStorage.getItem('riwayatForexSwing')) || [];
+            const wadahRiwayat = document.getElementById('daftarRiwayatForex');
+            if (riwayatForex.length === 0) {
+                wadahRiwayat.innerHTML = '<div class="kosong">Belum ada catatan transaksi</div>';
+                return;
+            }
+            let isiRiwayat = '';
+            riwayatForex.forEach(item => {
+                isiRiwayat += `<div class="riwayat">
+                    <div class="tgl-riwayat">📅 ${item.tanggal}</div>
+                    <div class="teks-riwayat">💱 Pasangan: ${item.pasangan}</div>
+                    <div class="teks-riwayat">↗️ Arah: ${item.arah} | 💰 Hasil: ${item.hasil}</div>
+                    <div class="teks-riwayat">📚 Pelajaran: ${item.pelajaran}</div>
+                </div>`;
+            });
+            wadahRiwayat.innerHTML = isiRiwayat;
+        }
+
+        function hapusSemuaCatatan() {
+            if (confirm('Yakin ingin menghapus SEMUA riwayat transaksi forex swing?')) {
+                localStorage.removeItem('riwayatForexSwing');
+                tampilkanRiwayatForex();
+                alert('🗑️ Semua Riwayat Berhasil Dihapus');
+            }
+        }
+
+        function bagikanLaporan() {
+            const pasangan = document.getElementById('pasangan').value || '-';
+            const arah = document.getElementById('arah').value || '-';
+            const hasil = document.getElementById('hasil').value || '-';
+            const pelajaran = document.getElementById('pelajaran').value || 'Tidak ada catatan';
+            const teksLaporan = `📊 LAPORAN TRADING FOREX SWING 📈\n📅 Tanggal: ${formatTgl}\n\n💱 Pasangan: ${pasangan}\n↗️ Arah: ${arah}\n💰 Hasil: ${hasil}\n📚 Pelajaran: ${pelajaran}\n\nTetap Disiplin & Kelola Risiko! 🚀💹`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(teksLaporan)}`, '_blank');
+        }
+
+        tampilkanRiwayatForex();
+    </script>
+</body>
+</html>
